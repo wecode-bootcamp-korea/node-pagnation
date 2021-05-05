@@ -12,7 +12,6 @@ app.get("/users", (req, res) => {
     for (let i = offset; i < limit + offset; i++) {
       if (filteredUsers.length !== limit && i < Database.users.length) {
         filteredUsers.push(Database.users[i])
-        console.log(i)
       }
     }
 
@@ -31,6 +30,4 @@ app.get("/", (req, res) => {
   res.send(readme)
 })
 
-app.listen(process.env.PORT || 8000, () => {
-  console.log("server start!")
-})
+app.listen(process.env.PORT || 5000, '0.0.0.0')
