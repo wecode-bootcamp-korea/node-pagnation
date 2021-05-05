@@ -26,11 +26,6 @@ app.get("/users", (req, res) => {
   res.send(Database)
 })
 
-const articleHtmlFormat = fs.readFileSync(
-  "./templates/article_format.html",
-  "utf8"
-);
-
 app.get("/", (req, res) => {
   const readme = fs.readFileSync("README.html", "utf8");
 
