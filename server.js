@@ -22,9 +22,13 @@ app.get("/users", (req, res) => {
     return
   }
 
-  
-
   res.send(Database)
+})
+
+app.get("/", (req, res) => {
+  const readme = fs.readFileSync("README.md", "utf8");
+
+  res.send(readme)
 })
 
 app.listen(8000, () => {
