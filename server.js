@@ -1,6 +1,12 @@
 const fs = require("fs")
 const express = require("express")
+const cors = require("cors")
+
 const app = express()
+
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 const Database = require("./Database.json")
 const PORT = process.env.PORT || 5000
