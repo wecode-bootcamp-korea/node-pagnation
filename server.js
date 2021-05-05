@@ -1,7 +1,9 @@
+const fs = require("fs")
 const express = require("express")
 const app = express()
 
 const Database = require("./Database.json")
+const PORT = process.env.PORT || 5000
 
 app.get("/users", (req, res) => {
   if (Object.keys(req.query).length !== 0) {
@@ -30,4 +32,4 @@ app.get("/", (req, res) => {
   res.send(readme)
 })
 
-app.listen(process.env.PORT || 5000, '0.0.0.0')
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
